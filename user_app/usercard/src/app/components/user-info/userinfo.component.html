@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-left flex-row">
+  <a href="#" [routerLink]="['/users']">
+    <p class="back">&larr; Back</p>
+  </a>
+</div>
+
+<div class="d-flex justify-content-center flex-row" *ngIf="isLoadComplited">
+  <div class="card">
+    <div class="image-container">
+      <img class="card-img-top" src="../../../../assets/avatar.png" alt="Card image">
+    </div>
+    <div class="card-body">
+      <h4 class="card-title text-center">{{ user.name }}</h4>
+      <p class="card-text age text-center">{{ user.age }}</p>
+      <p class="card-text text-center city" (click)="onCityClick()" *ngIf="!isCountryEdited">{{ user.city }}</p>
+      <div *ngIf="isCountryEdited" class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Your city" aria-label="Recipient's username"
+          aria-describedby="basic-addon2" #input>
+        <div class="input-group-append">
+          <button class="btn btn-default" (click)="onCityEnter(input.value)">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div *ngIf="isLoadComplited">
+  <div *ngFor="let knowledge of user.knowledge">
+    <div class="d-flex justify-content-center flex-row">
+      <h4>{{ knowledge.language }}</h4>
+    </div>
+    <div class="d-flex justify-content-center flex-row">
+      <p class="frameworks">{{ knowledge.frameworks }}</p>
+    </div>
+  </div>
+</div>

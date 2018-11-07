@@ -1,0 +1,54 @@
+.card {
+    width: 300px;
+    border: none;
+}
+
+.card-img-top {
+    border-radius: 50%;
+}
+
+.image-container {
+    margin: 40px 40px 40px 40px;
+}
+
+p.age {
+    color: grey;
+    margin-top: -10px;
+}
+
+p.skills {
+    margin-top: -10px;
+}
+
+p.frameworks {
+    margin-top: -10px;
+}
+
+p.back {
+    font-size: 150%;
+    color: black;
+}
+
+p.city:hover {
+    cursor: pointer;
+    color: darkgray;
+}
+
+.card-body {
+    margin-top: -30px;
+}
+
+.card-title {
+    margin-top: -20px;
+}
+
+hr {
+    width: 50%;
+    color: lightgray;
+    height: 1px;
+    background-color: lightgray;
+}
+
+a:hover {
+    text-decoration: none;
+}
