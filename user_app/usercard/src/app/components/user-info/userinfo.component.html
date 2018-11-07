@@ -4,7 +4,7 @@
   </a>
 </div>
 
-<div class="d-flex justify-content-center flex-row" *ngIf="isLoadComplited">
+<div class="d-flex justify-content-center flex-row" *ngIf="isLoadFinished">
   <div class="card">
     <div class="image-container">
       <img class="card-img-top" src="../../../../assets/avatar.png" alt="Card image">
@@ -25,7 +25,7 @@
 </div>
 <hr>
 
-<div *ngIf="isLoadComplited">
+<div *ngIf="isLoadFinished">
   <div *ngFor="let knowledge of user.knowledge">
     <div class="d-flex justify-content-center flex-row">
       <h4>{{ knowledge.language }}</h4>

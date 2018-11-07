@@ -4,6 +4,8 @@ import { UsersService } from 'src/app/services/users/users.service';
 import { ActivatedRoute } from '@angular/router';
 
 import * as _ from 'lodash';
+import { RootStoreState, UsersStoreSelectors } from 'src/app/root-store';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-userinfo',
@@ -14,10 +16,10 @@ export class UserinfoComponent implements OnInit {
   user: User;
   userId: number;
   isCountryEdited = false;
-  isLoadComplited = false;
+  isLoadFinished = false;
 
   constructor(
-    private userService: UsersService,
+    private store$: Store<RootStoreState.State>,
     private route: ActivatedRoute,
   ) {
     route.params.subscribe(p => {
@@ -32,10 +34,10 @@ export class UserinfoComponent implements OnInit {
   }
 
   populateUser() {
-    this.userService.getById(this.userId)
-      .subscribe(user => {
-        this.user = user;
-        this.isLoadComplited = true;
+    this.store$.select(UsersStoreSelectors.selectById(this.userId))
+      .subscribe(data => {
+        this.user = data;
+        this.isLoadFinished = true;
       });
   }
 

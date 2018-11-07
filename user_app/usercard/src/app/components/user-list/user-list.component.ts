@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
         query(':enter', [
           style({ opacity: 0 }),
           animate('1s', style({ opacity: 1 }))
-        ])
+        ], { optional: true })
       ])
     ])
   ]
