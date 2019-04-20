@@ -4,7 +4,6 @@ import { Action } from '@ngrx/store';
 import { Observable, of as observableOf } from 'rxjs';
 import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 import * as featureActions from './actions';
-import { UserModel } from 'src/app/shared/models/user';
 import { UsersService } from 'src/app/services/users/users.service';
 
 @Injectable()
