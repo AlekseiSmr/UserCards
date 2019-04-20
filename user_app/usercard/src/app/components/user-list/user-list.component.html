@@ -1,9 +1,14 @@
-<div class="container" [@cardAnimation]="users.length">
-    <div *ngFor="let item of users; let i = index">
-        <div *ngIf="i % 3 == 0" class="d-flex justify-content-center margin-card">
-            <app-user class="margin" *ngIf="i + 1 < users.length" (click)="onCardClick(users[i + 1].id)" [user]="users[i + 1]"></app-user>
-            <app-user class="margin" *ngIf="i + 2 < users.length" (click)="onCardClick(users[i + 2].id)" [user]="users[i + 2]"></app-user>
-            <app-user class="margin" *ngIf="i + 3 < users.length" (click)="onCardClick(users[i + 3].id)" [user]="users[i + 3]"></app-user>
+<div class="container-fluid fix-padding" [@cardAnimation]="count$ | async">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex flex-wrap">
+        <div
+          class="p-0 mr-2 mb-2"
+          *ngFor="let item of (users$ | async); let i = index"
+        >
+          <app-user (click)="onCardClick(item.id)" [user]="item"></app-user>
         </div>
+      </div>
     </div>
+  </div>
 </div>

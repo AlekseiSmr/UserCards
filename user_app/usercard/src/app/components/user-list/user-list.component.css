@@ -1,7 +1,4 @@
-div.margin-card {
-    margin-top: 10px;
-}
-
-app-user.margin {
-    margin-right: 10px;
+.fix-padding {
+  padding-left: 30%;
+  padding-right: 30%;
 }
