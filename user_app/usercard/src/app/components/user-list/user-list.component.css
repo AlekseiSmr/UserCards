@@ -1,4 +1,3 @@
 .fix-padding {
-  padding-left: 30%;
-  padding-right: 30%;
+  max-width: 724px;
 }
